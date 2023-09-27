@@ -1032,17 +1032,14 @@ void Pet::UpdateDamagePhysical(WeaponAttackType attType)
         switch (GetHappinessState())
         {
             case HAPPY:
-                // 125% of normal damage
-                mindamage = mindamage * 1.25f;
-                maxdamage = maxdamage * 1.25f;
+                mindamage = mindamage * 2f;
+                maxdamage = maxdamage * 2f;
                 break;
             case CONTENT:
-                // 100% of normal damage, nothing to modify
+                mindamage = mindamage * 1.5f;
+                maxdamage = maxdamage * 1.5f;
                 break;
             case UNHAPPY:
-                // 75% of normal damage
-                mindamage = mindamage * 0.75f;
-                maxdamage = maxdamage * 0.75f;
                 break;
         }
     }

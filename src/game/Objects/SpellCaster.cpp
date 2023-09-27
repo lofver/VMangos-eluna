@@ -1406,6 +1406,12 @@ int32 SpellCaster::SpellBaseDamageBonusDone(SpellSchoolMask schoolMask)
                     DoneAdvertisedBenefit += int32(pUnit->GetStat(usedStat) * i->GetModifier()->m_amount / 100.0f);
                 }
             }
+            Stats usedStat = STAT_INTELLECT;
+            // 50% INTELLECT to SPELL_DAMAGE
+            DoneAdvertisedBenefit += int32(pUnit->GetStat(usedStat) * 50 / 100.0f);
+            // 50% SPIRIT to SPELL_DAMAGE
+            usedStat = STAT_SPIRIT;
+            DoneAdvertisedBenefit += int32(pUnit->GetStat(usedStat) * 50 / 100.0f);
         }
     }
     
